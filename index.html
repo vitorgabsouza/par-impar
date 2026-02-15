@@ -17,8 +17,60 @@
 </head>
 
 <body>
-    <h1>Teste</h1>
-    <i class="bi bi-list"></i>
+    <main>
+        <header>
+            <div>
+                <h1>Par ou Ímpar</h1>
+                <img src="imagens/logotipo.svg" alt="Par ou Ímpar">
+            </div>
+            <p>
+                Sua pontuação: <span>0</span>
+            </p>
+        </header>
+
+        <section>
+            <h2>
+                Iniciar Partida <i class="bi bi-play-btn"></i>
+            </h2>
+            <form novalidate>
+                <label for="numero-jogador">
+                    Insira um número entre 0 e 5 <span>*</span>
+                </label>
+                <input type="number" name="numero-jogador" id="numero-jogador" placeholder="Exemplo: 2" min="0" max="5"
+                    step="1" required>
+                <fieldset>
+                    <legend>
+                        Selecione uma opção <span>*</span>
+                    </legend>
+                    <input type="radio" name="opcao" id="par" value="Par" checked>
+                    <label for="par">Par</label>
+                    <input type="radio" name="opcao" id="impar" value="Ímpar">
+                    <label for="impar">Ímpar</label>
+                </fieldset>
+                <button type="submit">
+                    Jogar <i class="bi bi-controller"></i>
+                </button>
+            </form>
+        </section>
+
+        <footer>
+            <p>
+                Desenvolvido por <a href="https://www.github.com/vitorgabsouza" target="_blank">Vitor Souza</a>
+            </p>
+        </footer>
+    </main>
+
+    <dialog>
+        <div>
+            <h3>
+                Aviso <i class="bi bi-exclamation-triangle"></i>
+            </h3>
+            <p></p>
+            <button type="button">
+                Fechar <i class="bi bi-x-square"></i>
+            </button>
+        </div>
+    </dialog>
 </body>
 
 </html>
