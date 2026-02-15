@@ -19,12 +19,12 @@
 <body>
     <main>
         <header>
-            <div>
+            <div class="container-logotipo">
                 <h1>Par ou Ímpar</h1>
                 <img src="imagens/logotipo.svg" alt="Par ou Ímpar">
             </div>
-            <p>
-                Sua pontuação: <span>0</span>
+            <p class="container-pontuacao">
+                Sua pontuação: <span class="pontuacao">0</span>
             </p>
         </header>
 
@@ -33,19 +33,19 @@
                 Iniciar Partida <i class="bi bi-play-btn"></i>
             </h2>
             <form novalidate>
-                <label for="numero-jogador">
-                    Insira um número entre 0 e 5 <span>*</span>
+                <label for="numero-jogador" class="label">
+                    Insira um número entre 0 e 5 <span class="campo-obrigatorio">*</span>
                 </label>
                 <input type="number" name="numero-jogador" id="numero-jogador" placeholder="Exemplo: 2" min="0" max="5"
                     step="1" required>
                 <fieldset>
-                    <legend>
-                        Selecione uma opção <span>*</span>
+                    <legend class="label">
+                        Selecione uma opção <span class="campo-obrigatorio">*</span>
                     </legend>
                     <input type="radio" name="opcao" id="par" value="Par" checked>
-                    <label for="par">Par</label>
+                    <label for="par" class="label-opcao">Par</label>
                     <input type="radio" name="opcao" id="impar" value="Ímpar">
-                    <label for="impar">Ímpar</label>
+                    <label for="impar" class="label-opcao">Ímpar</label>
                 </fieldset>
                 <button type="submit">
                     Jogar <i class="bi bi-controller"></i>
@@ -54,18 +54,18 @@
         </section>
 
         <footer>
-            <p>
+            <p class="copyright">
                 Desenvolvido por <a href="https://www.github.com/vitorgabsouza" target="_blank">Vitor Souza</a>
             </p>
         </footer>
     </main>
 
     <dialog>
-        <div>
+        <div class="container-conteudo-modal">
             <h3>
                 Aviso <i class="bi bi-exclamation-triangle"></i>
             </h3>
-            <p></p>
+            <p class="texto-modal"></p>
             <button type="button">
                 Fechar <i class="bi bi-x-square"></i>
             </button>
