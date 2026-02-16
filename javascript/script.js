@@ -9,11 +9,11 @@ const comecarJogo = () => {
 	const botaoQueFechaOModal = document.querySelector('#botao-que-fecha-o-modal');
 
 	const mostrarErro = ({ mensagem }) => {
-		alternarExibicaoModal({ mostrar: true, mensagem });
+		alternarExibicaoDoModal({ mostrar: true, mensagem });
 		resetarFormulario();
 	};
 
-	const alternarExibicaoModal = ({ mostrar, mensagem = '' }) => {
+	const alternarExibicaoDoModal = ({ mostrar, mensagem = '' }) => {
 		if (mensagem) textoDoModal.textContent = mensagem;
 
 		if (!mostrar) {
@@ -45,12 +45,12 @@ const comecarJogo = () => {
 		const mensagemBase = `Você: ${numeroDoJogador} (${opcoesDeJogo.opcaoDoJogador}). CPU: ${numeroDaCPU} (${opcoesDeJogo.opcaoDaCPU}). Resultado: ${soma}.`;
 
 		if ((opcoesDeJogo.opcaoDoJogador === 'Par' && soma % 2 !== 0) || (opcoesDeJogo.opcaoDoJogador === 'Ímpar' && soma % 2 === 0)) {
-			alternarExibicaoModal({ mostrar: true, mensagem: `${mensagemBase} Você perdeu, recomece o jogo.` });
+			alternarExibicaoDoModal({ mostrar: true, mensagem: `${mensagemBase} Você perdeu, recomece o jogo.` });
 			alternarPontuacao({ vencedor: 'cpu' });
 			return;
 		}
 
-		alternarExibicaoModal({ mostrar: true, mensagem: `${mensagemBase} Você venceu, +1 ponto.` });
+		alternarExibicaoDoModal({ mostrar: true, mensagem: `${mensagemBase} Você venceu, +1 ponto.` });
 		alternarPontuacao({ vencedor: 'jogador' });
 	};
 
@@ -58,7 +58,7 @@ const comecarJogo = () => {
 		let pontos = Number(pontuacao.textContent.trim());
 
 		if (Number.isNaN(pontos)) {
-			alternarExibicaoModal({ mostrar: true, mensagem: 'Erro: Por favor, mantenha a pontuação de forma numérica.' });
+			alternarExibicaoDoModal({ mostrar: true, mensagem: 'Erro: Por favor, mantenha a pontuação de forma numérica.' });
 			pontuacao.textContent = 0;
 			return;
 		}
@@ -87,10 +87,10 @@ const comecarJogo = () => {
 
 	modal.addEventListener('click', (event) => {
 		const dimensoesDoModal = modal.getBoundingClientRect();
-		if (!(event.clientX >= dimensoesDoModal.left && event.clientX <= dimensoesDoModal.right && event.clientY >= dimensoesDoModal.top && event.clientY <= dimensoesDoModal.bottom)) alternarExibicaoModal({ mostrar: false });
+		if (!(event.clientX >= dimensoesDoModal.left && event.clientX <= dimensoesDoModal.right && event.clientY >= dimensoesDoModal.top && event.clientY <= dimensoesDoModal.bottom)) alternarExibicaoDoModal({ mostrar: false });
 	});
 
-	botaoQueFechaOModal.addEventListener('click', () => alternarExibicaoModal({ mostrar: false }));
+	botaoQueFechaOModal.addEventListener('click', () => alternarExibicaoDoModal({ mostrar: false }));
 };
 
 comecarJogo();
