@@ -69,16 +69,19 @@ body {
     margin-bottom: 1.2rem;
 }
 
-.form button {
+.botao {
     font-family: unset;
-    font-size: 1.4rem;
     color: #fff;
-    background-color: #617f9d;
-    padding: 1.4rem 1.6rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.5s ease-in-out;
+}
+
+.form button {
+    font-size: 1.4rem;
+    background-color: #617f9d;
+    padding: 1.4rem 1.6rem;
 }
 
 .form button:hover {
@@ -196,15 +199,9 @@ body {
 
 .area-conteudo-modal button {
     align-self: flex-end;
-    font-family: unset;
     font-size: 1.2rem;
-    color: #fff;
     background-color: #dc3545;
     padding: 1.2rem 1.4rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.5s ease-in-out;
 }
 
 .area-conteudo-modal button:hover {
